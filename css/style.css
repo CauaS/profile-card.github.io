@@ -1,0 +1,186 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+
+:root {
+  --bg: #e5e5e5;
+  --cardBackgroundColor: #fff;
+  --buttonContactColor: #4338CA;
+  --buttonBackgroundColorHouver: #3730A3;
+  --primaryTextColor: #171717;
+  --secondaryTextColor: #525252;
+  --hoverColor: #F5F5F5;
+  --focusColor: #F5F5F5;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  background-color: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Tipografy */
+h2 {
+  font-size: 1.25rem;
+  color:var(--primaryTextColor)
+}
+
+h6 {
+  font-size: .875rem;
+  color:var(--secondaryTextColor)
+}
+
+p {
+  font-size: 1rem;
+  color:var(--secondaryTextColor)
+}
+
+
+/* ************************** Wrapper */
+.container {
+  display: flex;
+  justify-content: center;
+
+  min-width: 100vw;
+}
+
+/* ************************** Grid card setup */
+.container > .profile-card-grid-template {
+  width: 340px;
+  border-radius: 8px;
+  background-color: var(--cardBackgroundColor);
+
+  margin-top: 200px;
+  padding: 24px 16px;
+  
+  display: grid;
+  grid-template-areas:
+  'profile-image-name'
+  'profile-bio'
+  'contact'
+  'footer-media';
+}
+
+/* ************************** Image and profile name and username */
+.profile-image-name-area {
+  grid-area: profile-image-name;
+}
+.profile-image-name-area > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 24px;
+}
+header > .profile-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ************************** Bio area */
+.profile-bio-area {
+  grid-area: profile-bio;
+  text-align: center;
+
+  padding: 20px 0;
+}
+
+/* ************************** Get in contact area */
+.contact-area {
+  grid-area: contact;
+
+  display: flex;
+  justify-content: center;
+
+  margin: 20px 0;
+}
+.contact-area > button {
+  width: 100%;
+  
+  background-color: var(--buttonContactColor);
+  border-radius: 4px;
+  padding: 5px 0;
+  
+  color: #fff;
+
+  transition: all .3s ease-in;
+}
+
+
+/* ************************** Links and actions area */
+.footer-media-area {
+  grid-area: footer-media;
+}
+.footer-media-area > footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.footer-media-area > footer > a {
+  padding: .1em;
+}
+/* ************************** Hover disabled */
+button:disabled {
+  background-color: var(--hoverColor);
+  color: #A3A3A3;
+  cursor: not-allowed;
+}
+/* ************************** Hover style when not disabled */
+button:hover:not([disabled]) {
+  background-color: var(--buttonBackgroundColorHouver);
+}
+footer > a:hover {
+  background-color: var(--hoverColor);
+  border-radius: 3px;
+}
+
+/* ************************** Focus style */
+button:focus {
+  background-color: var(--buttonBackgroundColorHouver);
+  outline: 3px solid var(--focusColor);
+  border-radius: 3px;
+}
+
+footer > a:focus {
+  outline: 3px solid  var(--focusColor);
+  border-radius: 3px;
+}
+
+/*
+   Button and links: normal, hover and foces 
+   Distance of 200px from the top
+   Top section: Normal gap is 24px
+   For links aria-label should be added (becasue they dont have a visible text on screen)
+   transition: all .3s ease-in;
+ */
+
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
